@@ -1,5 +1,6 @@
 const URL_PLANILHA = "https://script.google.com/macros/s/AKfycbyueyb12C9eXlflO0Qlj89fQefyHl0dwBIIJJBbpZr96cMphg5lcpaxasiviU2p2ymO5g/exec";
 
+const iconeHorario = document.getElementById("icone-horário");
 const listaTurmas = document.getElementById("lista-turmas");
 const contador = document.getElementById("contador");
 const paginaHorario = document.getElementById("pagina-horário");
@@ -154,12 +155,28 @@ function mostrarTurmas(filtro = pesquisaAtual) {
         card.type = "button";
         card.className = "card-turma";
 
-        card.innerHTML = `
-            <div class="icone-curso">📚</div>
-            <h4></h4>
-            <p>Horários de aula</p>
-            <div class="abrir">Consultar horário →</div>
-        `;
+        const curso = normalizar(turma);
+
+let icone = "📚";
+
+if (curso.includes("meio ambiente")) {
+    icone = "🌿";
+} else if (curso.includes("ciencia") && curso.includes("dados")) {
+    icone = "💻";
+} else if (curso.includes("informatica") || curso.includes("info")) {
+    icone = "🖥️";
+} else if (curso.includes("administracao")) {
+    icone = "📊";
+} else if (curso.includes("design")) {
+    icone = "🎨";
+}
+
+card.innerHTML = `
+    <div class="icone-curso">${icone}</div>
+    <h4></h4>
+    <p>Horários de aula</p>
+    <div class="abrir">Consultar horário →</div>
+`;
 
         const estrela = document.createElement("span");
         estrela.className = "botao-favorito";
@@ -202,6 +219,23 @@ function abrirTurma(turma) {
     nomeHorario.textContent = turma;
     faseHorario.textContent = "Horários de aula 2026.2";
 
+   const curso = normalizar(turma);
+
+if (curso.includes("meio ambiente")) {
+    iconeHorario.textContent = "🌿";
+} else if (curso.includes("ciencia") && curso.includes("dados")) {
+    iconeHorario.textContent = "💻";
+} else if (curso.includes("informatica") || curso.includes("info")) {
+    iconeHorario.textContent = "🖥️";
+} else if (curso.includes("administracao")) {
+    iconeHorario.textContent = "📊";
+} else if (curso.includes("design")) {
+    iconeHorario.textContent = "🎨";
+} else {
+    iconeHorario.textContent = "📚";
+}
+    
+    
     principal.style.display = "none";
     paginaHorario.style.display = "block";
 
