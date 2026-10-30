@@ -50,17 +50,23 @@ body {
 }
 
 .logo {
-    width: 55px;
-    height: 55px;
-    background: linear-gradient(135deg, #38bdf8, #2563eb);
-    color: white;
+    width: 70px;
+    height: 70px;
     border-radius: 16px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 26px;
-    font-weight: bold;
+    flex-shrink: 0;
+    background: #ffffff;
     box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .cabecalho h2 {
