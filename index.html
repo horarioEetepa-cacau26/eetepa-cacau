@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horários EETEPA-cacau</title>
+
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <header class="cabecalho">
+        <div class="logo">
+
+        </div>
+
+        <div>
+            <h2>EETEPA-CACAU</h2>
+            <p>Horários de aula 2026.2</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="inicio">
+          <span class="etiqueta">Horários de aula</span>
+          <h2>
+             consulte o horário
+             <br>
+             de sua turma
+          </h2>
+
+          <p class="descrição">Escolha sua turma para consultar o horário</p>
+
+        </section>
+
+    <!--TURMAS-->
+    <section>
+
+        <div class="titulo-turmas">
+    <h3>Turmas</h3>
+    <span id="contador">16 turmas</span>
+</div>
+
+<div class="filtros-turmas">
+    <button class="filtro-turma ativo" data-filtro="todas">
+        Todas
+    </button>
+
+    <button class="filtro-turma" data-filtro="favoritas">
+        ⭐ Favoritas
+    </button>
+</div>
+
+        <div class="pesquisa-turmas">
+    <span class="icone-pesquisa">⌕</span>
+    <input
+        type="search"
+        id="pesquisa-turma"
+        placeholder="Pesquisar turma..."
+        autocomplete="off"
+    >
+    <button id="limpar-pesquisa" type="button" aria-label="Limpar pesquisa">
+        ✕
+    </button>
+</div>
+    
+<div id="lista-turmas" class="lista-turmas"></div>
+
+<div id="sem-Resultados" class="sem-resultados" hidden>
+    Nenhuma turma encontrada.
+</div>
+        <div
+            id="lista-turmas" class="lista-turmas">
+        </div>
+    <p>
+        <div
+           id="sem-Resultados" class="sem -resultaos">
+        </div>
+          nenhuma turma encontrada.
+    </p>
+    
+
+    </section>
+
+    </main>
+    <section id="pagina-horário" class="pagina-horári"
+        class="pagina-horário">
+
+    <button id="botão-voltar" class="botão-voltar">
+       Voltar para turmas
+    </button>
+
+    <div class="cabeçalho-horário">
+        <span id="icone-horário">
+        </span>
+
+    <div>
+        <h2 id="nome-turma-horário">
+        INFO 25-B</h2>
+        <p id="fase-turma-horário">
+        INFOMÁTICA 4° FASE</p>
+    </div>
+    </div>
+
+   
+    </div>
+
+    <div id="lista-aulas" class="lista-aulas">
+    </div>
+
+    </section>
+
+       <footer>
+          <p>
+            EETEPA-CACAU-Horários 2026.2
+          </p>
+ <div class="dias">
+    <button class="dia ativo" data-dia="segunda">SEG</button>
+    <button class="dia" data-dia="terça">TER</button>
+    <button class="dia" data-dia="quarta">QUA</button>
+    <button class="dia" data-dia="quinta">QUI</button>
+    <button class="dia" data-dia="sexta">SEX</button>
+    <button class="dia" data-dia="sábado">SAB</button>
+</div>
+        
+          <p class="aviso">
+            projeto em desenvolvimento
+        </p>
+
+        </footer>
+
+
+        <script src="script.js"></script>
+</body>
+</html>
